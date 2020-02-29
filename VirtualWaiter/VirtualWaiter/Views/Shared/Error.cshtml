@@ -1,13 +1,15 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
-</body>
-</html>
+﻿@model string
+@{
+    ViewBag.Title = "Error";
+}
+<div class="row">
+    <div class="col-6 offset-3 text-center">
+
+        <div class="card mt-5">
+            <div class="card-body error-card">
+                <h5 class="error-card-name text-body">@ErrorResource.ErrorText</h5>
+                <h5 class="error-card-desc pt-1">@Model</h5>
+            </div>
+        </div>
+    </div>
+</div>

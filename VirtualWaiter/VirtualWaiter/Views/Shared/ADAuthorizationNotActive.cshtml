@@ -1,0 +1,9 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = ErrorResource.AccessDenied;
+}
+
+<h1 class="text-danger">@ErrorResource.AccessDenied</h1>
+<h2 class="text-danger">@ErrorResource.AdAuthorizationNotActiveErrorText</h2>
+<h2 class="text-danger">@SharedResource.CurrentlyLoggedAs "@HttpContext.Current.Request.LogonUserIdentity.Name"</h2>

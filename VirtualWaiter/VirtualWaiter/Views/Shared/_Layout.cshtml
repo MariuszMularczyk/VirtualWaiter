@@ -1,42 +1,117 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@SharedResource.VirtualWaiter</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/DevExtremeBundle")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jqueryGlobalize")
+    @Scripts.Render("~/bundles/jqueryBase64")
+
+
+    @Scripts.Render("~/Scripts/DevExtremeBundle")
+
+    @if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "pl-PL")
+    {
+        @Scripts.Render("~/Scripts/DevExtremeBundlePL")
+    }
+    else if (System.Threading.Thread.CurrentThread.CurrentUICulture.Name == "de-DE")
+    {
+        @Scripts.Render("~/Scripts/DevExtremeBundleDE")
+    }
+    else
+    {
+        @Scripts.Render("~/Scripts/DevExtremeBundleEN")
+    }
+    <style>
+
+        .grid-action-button {
+            color: #2e52a9;
+            font-size: 14px;
+            background: white;
+            border-radius: 100%;
+            padding: 3px 5px;
+        }
+
+        .grid-action-button {
+            margin-left: 10px;
+        }
+
+        .ip-header {
+            padding: 5px;
+            font-size: 18px;
+        }
+
+        .ip-content {
+            padding: 4px;
+            font-size: 14px;
+        }
+
+        .dx-fileuploader-input-label {
+            visibility: hidden;
+        }
+    </style>
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    <div class="container-fluid">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    <div id="errorToast"></div>
+    <div id="successToast"></div>
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $(document).ajaxError(function (event, request, settings, thrownError) {
+                //$('#ajaxExceptionContentMessageId').empty();
+                //$('#ajaxExceptionContentMessageId').html('');
+                //$('#ajaxExceptionContentMessageId').html('Error.');
+                //$('#ajaxExceptionMessageId').show();
+            });
+
+            //Globalize.culture("pl-PL");
+
+            if ($.validator != undefined) {
+                $.validator.methods.number = function (value, element) {
+                    var globalizationValue = value.replace(".", ",");
+                    return this.optional(element) ||
+                        !isNaN(Globalize.parseNumber(globalizationValue));
+                }
+
+                $.validator.methods.range = function (value, element, param) {
+                    if (value === undefined && param.length === 2 && isNaN(param[0]) && isNaN(param[1]))
+                    {
+                        return false;
+                    }
+                    if (value === "true" && param.length === 2 && isNaN(param[0]) && isNaN(param[1])) {
+                        return true;
+                    }
+
+                    var globalizationValue = value.replace(".", ",");
+                    return this.optional(element) || (Globalize.parseNumber(globalizationValue) >= param[0] && Globalize.parseNumber(globalizationValue) <= param[1]);
+                }
+            }
+        });
+        $(function () {
+            var transport = ['webSockets', 'serverSentEvents', 'longPolling', 'foreverFrame'];
+            var isChrome = !!window.chrome && !!window.chrome.webstore;
+            if (isChrome) {
+                transport = ['serverSentEvents', 'longPolling', 'foreverFrame'];
+            }
+        });
+
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
 </body>
 </html>

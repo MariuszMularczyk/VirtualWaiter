@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VirtualWaiter.Utils;
 
 namespace VirtualWaiter.Controllers
 {
+    [Authorize]
+    [AdAuthorization]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Order", new { area = AreaNames.Order_Area });
         }
 
         public ActionResult About()

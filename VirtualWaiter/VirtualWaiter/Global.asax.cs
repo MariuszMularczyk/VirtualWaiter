@@ -1,4 +1,5 @@
-﻿using System;
+﻿using VirtualWaiter.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +13,20 @@ namespace VirtualWaiter
     {
         protected void Application_Start()
         {
+            DevExtremeBundleConfig.RegisterBundles(BundleTable.Bundles);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+#if !DEBUG
+            MainDatabaseContext.MigrateData();
+#endif
+        }
+
+        protected void Session_End(Object sender, EventArgs E)
+        {
+            Session.Clear();
         }
     }
 }
