@@ -86,12 +86,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FunctionalityAppRoleResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Orders\OrderResource.Designer.cs">
+    <Compile Include="Order\OrderResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Orders\OrderStatusResource.Designer.cs">
+    <Compile Include="Order\OrderStatusResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderStatusResource.resx</DependentUpon>
@@ -167,13 +167,13 @@
       <LastGenOutput>FunctionalityAppRoleResource1.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Orders\OrderResource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+    <EmbeddedResource Include="Order\OrderResource.resx">
       <LastGenOutput>OrderResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Orders\OrderStatusResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\OrderStatusResource.resx">
       <LastGenOutput>OrderStatusResource.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Shared\ButtonNameResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

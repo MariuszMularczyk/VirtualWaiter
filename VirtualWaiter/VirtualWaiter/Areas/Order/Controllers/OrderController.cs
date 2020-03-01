@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VirtualWaiter.Application;
+using VirtualWaiter.Dictionaries;
 using VirtualWaiter.Utils;
 
 namespace VirtualWaiter.Areas.Order.Controllers
@@ -22,6 +23,19 @@ namespace VirtualWaiter.Areas.Order.Controllers
         {
             //OrderIndexVM model = OrderService.GetOrderIndexVM();
             OrderIndexVM model = new OrderIndexVM();
+            model.OrderStatuses = EnumHelpers.GetEnumBinderListJson<OrderStatusEnum>();
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(OrderAddVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                OrderService.Add(model);
+                return RedirectToAction("Index");
+            }
             return View(model);
         }
     }

@@ -14,6 +14,7 @@ namespace VirtualWaiter.Utils
     public class AreaNames
     {
         public const string Order_Area = "Order";
+        public const string AdminPanel_Area = "AdminPanel";
     }
 
     public class SessionVariableNames

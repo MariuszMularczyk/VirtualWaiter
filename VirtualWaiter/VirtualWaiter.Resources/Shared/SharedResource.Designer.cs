@@ -473,5 +473,14 @@ namespace VirtualWaiter.Resources.Shared {
                 return ResourceManager.GetString("Users", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wirtualny kelner.
+        /// </summary>
+        public static string VirtualWaiter {
+            get {
+                return ResourceManager.GetString("VirtualWaiter", resourceCulture);
+            }
+        }
     }
 }

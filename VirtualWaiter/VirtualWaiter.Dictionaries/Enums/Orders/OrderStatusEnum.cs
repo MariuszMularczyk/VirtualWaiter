@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using VirtualWaiter.Resources.Orders;
+using VirtualWaiter.Resources.Order;
 
 namespace VirtualWaiter.Dictionaries
 {
-    public enum WorkerFunctionEnum : int
+    public enum OrderStatusEnum : int
     {
         [Display(ResourceType = typeof(OrderStatusResource), Name = "OrderStatus_Awaiting")]
         Awaiting = 1,

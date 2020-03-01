@@ -16,7 +16,8 @@ namespace VirtualWaiter.Application
         public OrderIndexVM()
         {
         }
-     
+
+        public string OrderStatuses { get; set; }
     }
 }
 

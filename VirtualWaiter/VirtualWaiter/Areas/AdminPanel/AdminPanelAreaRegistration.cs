@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using VirtualWaiter.Utils;
 
 namespace VirtualWaiter.Areas.AdminPanel
 {
@@ -8,7 +9,7 @@ namespace VirtualWaiter.Areas.AdminPanel
         {
             get 
             {
-                return AreaNames.AdminPanel;
+                return AreaNames.AdminPanel_Area;
             }
         }
 
@@ -16,7 +17,7 @@ namespace VirtualWaiter.Areas.AdminPanel
         {
             context.MapRoute(
                 "AdminPanel_default",
-                AreaNames.AdminPanel + "{controller}/{action}/{id}",
+                AreaNames.AdminPanel_Area + "{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

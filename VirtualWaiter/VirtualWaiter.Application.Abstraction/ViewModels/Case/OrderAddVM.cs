@@ -12,7 +12,8 @@ namespace VirtualWaiter.Application
 {
     public class OrderAddVM
     {
-
+        public string Order { get; set; }
+        public int? OrderStatusId { get; set; }
     }
 }
 

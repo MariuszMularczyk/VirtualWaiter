@@ -13,5 +13,6 @@ namespace VirtualWaiter.Application
 {
     public interface IOrderService : IService
     {
+        void Add(OrderAddVM model);
     }
 }

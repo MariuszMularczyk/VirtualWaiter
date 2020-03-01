@@ -45,28 +45,6 @@ namespace VirtualWaiter.Utils
                 return;
             }
 
-            //if (!LoginHelper.IsNormalUser())
-            //{
-            //    filterContext.HttpContext.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            //    LoginHelper.ClearSession();
-            //    filterContext.Result = new HttpUnauthorizedResult();
-            //    return;
-            //}
-
-
-            if (LoginHelper.IsUserBanned())
-            {
-                if (!filterContext.IsChildAction)
-                {
-                    filterContext.Result = new ViewResult()
-                    {
-                        ViewName = "Lockout"
-                    };
-                }
-
-                return;
-            }
-
             AppUserData userData = UserHelper.GetUserData();
 
             context.PersonId = userData.Id;

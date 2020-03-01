@@ -255,4 +255,7 @@
   <data name="Edit" xml:space="preserve">
     <value>Edycja</value>
   </data>
+  <data name="VirtualWaiter" xml:space="preserve">
+    <value>Wirtualny kelner</value>
+  </data>
 </root>
