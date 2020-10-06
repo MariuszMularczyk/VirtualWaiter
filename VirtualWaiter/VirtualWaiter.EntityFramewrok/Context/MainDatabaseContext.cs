@@ -63,6 +63,7 @@ namespace VirtualWaiter.EntityFramework
 
         #region Order
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Drink> Drinks { get; set; }
         #endregion
 
 

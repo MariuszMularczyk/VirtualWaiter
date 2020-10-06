@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstraction\Administration\IDrinkService.cs" />
     <Compile Include="Abstraction\Order\IOrderService.cs" />
     <Compile Include="Abstraction\Core\IApplicationFileService.cs" />
     <Compile Include="Abstraction\Core\IAppSettingsService.cs" />
@@ -100,6 +101,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\FileHelpers.cs" />
     <Compile Include="Utils\ImageHelpers.cs" />
+    <Compile Include="ViewModels\Administration\Drink\DrinkAddVM.cs" />
+    <Compile Include="ViewModels\Administration\Drink\DrinkEditVM.cs" />
     <Compile Include="ViewModels\Order\OrderAddVM.cs" />
     <Compile Include="ViewModels\Order\OrderEditVM.cs" />
     <Compile Include="ViewModels\Order\OrderIndexVM.cs" />
@@ -124,6 +127,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VirtualWaiter.Data.Abstraction\VirtualWaiter.Data.Abstraction.csproj">
+      <Project>{3d3dd244-8b7a-4d92-b1e0-de9a364c5863}</Project>
+      <Name>VirtualWaiter.Data.Abstraction</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VirtualWaiter.Dictionaries\VirtualWaiter.Dictionaries.csproj">
       <Project>{625B8953-A9F5-4510-A6ED-432E750F52FD}</Project>
       <Name>VirtualWaiter.Dictionaries</Name>

@@ -19,6 +19,11 @@ namespace VirtualWaiter.Infrastructure
 
             kernel.Bind<IOrderRepository>().To<OrderRepository>().InMainContextScope();
 
+            kernel.Bind<IDrinkService>().To<DrinkService>().InMainContextScope().Intercept().With<TransactionInterceptor>();
+            kernel.Bind<DrinkService>().To<DrinkService>().InMainContextScope();
+
+            kernel.Bind<IDrinkRepository>().To<DrinkRepository>().InMainContextScope();
+
         }
     }
 }

@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\Administration\IDrinkRepository.cs" />
     <Compile Include="Abstractions\Order\IOrderRepository.cs" />
     <Compile Include="Abstractions\Core\IApplicationFileRepository.cs" />
     <Compile Include="Abstractions\Core\IAppSettingsRepository.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Abstractions\Membership\IFunctionalityRepository.cs" />
     <Compile Include="Abstractions\Membership\ILanguageRepository.cs" />
     <Compile Include="Core\IRepository.cs" />
+    <Compile Include="DTOs\Admnistration\DrinkListDTO.cs" />
     <Compile Include="DTOs\Membership\AppRole\RoleListDTO.cs" />
     <Compile Include="DTOs\Membership\AppUserRole\RoleUserListDTO.cs" />
     <Compile Include="DTOs\Membership\AppUserRole\UserRoleListDTO.cs" />
@@ -85,10 +87,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VirtualWaiter.Application.Abstraction\VirtualWaiter.Application.Abstraction.csproj">
-      <Project>{b0715432-c13a-4cf7-8485-6724f71a87c5}</Project>
-      <Name>VirtualWaiter.Application.Abstraction</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VirtualWaiter.Dictionaries\VirtualWaiter.Dictionaries.csproj">
       <Project>{625B8953-A9F5-4510-A6ED-432E750F52FD}</Project>
       <Name>VirtualWaiter.Dictionaries</Name>

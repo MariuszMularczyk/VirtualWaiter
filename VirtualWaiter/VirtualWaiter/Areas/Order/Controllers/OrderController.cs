@@ -38,5 +38,10 @@ namespace VirtualWaiter.Areas.Order.Controllers
             }
             return View(model);
         }
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
     }
 }

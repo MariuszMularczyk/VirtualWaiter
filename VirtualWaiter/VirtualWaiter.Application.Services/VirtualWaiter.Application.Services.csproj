@@ -113,6 +113,7 @@
     <Compile Include="Services\Membership\AppUserService.cs" />
     <Compile Include="Services\Membership\FunctionalityAppRoleService.cs" />
     <Compile Include="Services\Membership\FunctionalityService.cs" />
+    <Compile Include="Services\Administration\DrinkService.cs" />
     <Compile Include="Services\Order\OrderService.cs" />
   </ItemGroup>
   <ItemGroup>

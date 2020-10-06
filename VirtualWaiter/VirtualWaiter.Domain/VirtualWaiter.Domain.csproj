@@ -68,6 +68,7 @@
     <Compile Include="Membership\Functionality.cs" />
     <Compile Include="Membership\FunctionalityAppRole.cs" />
     <Compile Include="Membership\SystemUser.cs" />
+    <Compile Include="Administration\Drink.cs" />
     <Compile Include="Orders\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
