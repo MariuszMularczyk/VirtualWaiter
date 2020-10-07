@@ -9,7 +9,7 @@ using VirtualWaiter.Dictionaries;
 namespace VirtualWaiter.Domain
 {
     [Table("Drinks")]
-    public class Drink : AuditEntity
+    public class Drink : Entity
     {
         public string Name { get; set; }
         public string Description { get; set; }

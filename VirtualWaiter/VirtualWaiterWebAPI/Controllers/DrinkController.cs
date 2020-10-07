@@ -21,7 +21,7 @@ namespace VirtualWaiterWebAPI.Controllers
         #endregion
 
         [HttpPost]
-        [Route("add")]
+        [ActionName("add")]
         public void Add(DrinkAddVM model)
         {
             if (ModelState.IsValid)

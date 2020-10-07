@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="list-buttons">
-            <router-link :to="{name: 'drink.add'}" class="btn btn-primary">
+            <router-link :to="{name: 'administration.drink.add'}" class="btn btn-primary">
                 Dodaj napój
             </router-link>
         </div>
@@ -15,10 +15,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="drink of getDrinksList()" :key="`category-${drink.id}`">
-                    <td class="name-column">{{ drink.name }}</td>
-                    <td>{{ drink.description }}</td>
-                    <td>{{ drink.price }}</td>
+                <tr v-for="drink of getDrinksList()" :key="`category-${drink.Id}`">
+                    <td class="name-column">{{ drink.Name }}</td>
+                    <td>{{ drink.Description }}</td>
+                    <td>{{ drink.Price }}</td>
                     <td class="buttons-column">
                         <router-link :to="{name: 'drink.edit', params: {id: drink.id}}" class="btn btn-warning">
                             Edytuj
@@ -30,7 +30,7 @@
                 </tr>
             </tbody>
         </table>
-        <router-link to="{name: 'administrationDashboard'}"><button type="default" class="btn btn-primary">Wróć</button></router-link>
+        <router-link :to="{name: 'administrationDashboard'}"><button type="default" class="btn btn-primary">Wróć</button></router-link>
     </div>
 </template>
 

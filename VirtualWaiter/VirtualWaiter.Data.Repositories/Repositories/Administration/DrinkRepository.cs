@@ -19,6 +19,7 @@ namespace VirtualWaiter.Data
         {
             return Context.Drinks.Select(x => new DrinkListDTO()
             {
+                Id = x.Id,
                 Name = x.Name,
                 Description = x.Description,
                 Price = x.Price

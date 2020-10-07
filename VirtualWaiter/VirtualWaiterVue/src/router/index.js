@@ -20,6 +20,10 @@ export default new Router({
         name: 'administration.drinksList',
         component: () => import('@/views/administration/drinks/views/DrinksList')
     },    
-
+    {
+        path: '/administration/drink/add',
+        name: 'administration.drink.add',
+        component: () => import('@/views/administration/drinks/views/Add')
+    },  
   ]
 });

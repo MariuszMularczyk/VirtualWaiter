@@ -103,6 +103,7 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src\views\administration\drinks\storeModules\add.js" />
     <Content Include="src\views\administration\drinks\storeModules\index.js" />
     <Content Include="yarn.lock" />
   </ItemGroup>
@@ -111,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\views\administration\drinks\views\DrinksList.vue" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\views\administration\drinks\views\Add.vue" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

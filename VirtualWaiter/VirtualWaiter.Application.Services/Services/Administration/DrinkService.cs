@@ -26,7 +26,6 @@ namespace VirtualWaiter.Application
                 Description = model.Description,
                 Name = model.Name,
                 Price = model.Price
-
             };
             DrinkRepository.Add(drink);
             DrinkRepository.Save();
