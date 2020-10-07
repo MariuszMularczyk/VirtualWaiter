@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import drinksList from '../views/administration/drinks/index';
+import drinksList from '../views/administration/drinks/storeModules/index';
 
 Vue.use(Vuex);
 

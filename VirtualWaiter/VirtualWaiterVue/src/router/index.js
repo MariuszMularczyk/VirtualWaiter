@@ -18,7 +18,7 @@ export default new Router({
     {
         path: '/administration/drinksList',
         name: 'administration.drinksList',
-        component: () => import('@/views/administration/drinks/DrinksList')
+        component: () => import('@/views/administration/drinks/views/DrinksList')
     },    
 
   ]

@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="list-buttons">
-            <router-link :to="{name: 'categories.add'}" class="btn btn-primary">
-                Dodaj kategorie
+            <router-link :to="{name: 'drink.add'}" class="btn btn-primary">
+                Dodaj napój
             </router-link>
         </div>
         <table class="table">
@@ -20,10 +20,10 @@
                     <td>{{ drink.description }}</td>
                     <td>{{ drink.price }}</td>
                     <td class="buttons-column">
-                        <router-link :to="{name: 'categories.edit', params: {id: drink.id}}" class="btn btn-warning">
+                        <router-link :to="{name: 'drink.edit', params: {id: drink.id}}" class="btn btn-warning">
                             Edytuj
                         </router-link>
-                        <button class="btn btn-danger" @click.prevent="deleteCategory(drink)">
+                        <button class="btn btn-danger" @click.prevent="deleteDrink(drink)">
                             Usuń
                         </button>
                     </td>
